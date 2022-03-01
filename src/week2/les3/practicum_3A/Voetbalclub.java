@@ -15,8 +15,13 @@ public class Voetbalclub {
         }
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public void setNaam(String nm) {
+        if (nm == null || nm == "") {
+            this.naam = "FC";
+        }
+        else {
+            this.naam = nm;
+        }
     }
 
     public String getNaam(){
@@ -54,7 +59,7 @@ public class Voetbalclub {
             aantalGelijk = aantalGelijk + 1;
         if (ch == 'v')
             aantalVerloren = aantalVerloren + 1;
-        else
+        if (ch != 'w' && ch != 'g' && ch != 'v')
             System.out.println("Foutieve ingave");
     }
 
